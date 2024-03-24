@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=MuseoModerno');
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif; 
+}
+button{
+  cursor: pointer;
+}
+.logo{
+  font-family: 'MuseoModerno', sans-serif !important;
+  font-size: 21px !important;
+  color: #108d00;
+  font-weight: 900;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+}
+
+.nav-bar{
+  width: 100vw;
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  height: 75px;
+  padding: 15px 80px;
+  color: rgb(48, 48, 48);
+  align-items: baseline;
+  border-bottom: 1px solid rgba(102, 96, 96, 0.2);
+  background-color: white;
+}
+
+.find{
+  color: rgb(118, 118, 118);
+  display: flex;
+  font-size: 15px;
+  align-items: baseline;
+  font-weight: 450;
+  gap: 15px;
+  letter-spacing: .03px;
+}
+.find a:hover{
+  color: #008827;
+  text-decoration: underline;
+}
+.search{
+  border: 1px solid rgb(155, 150, 150);
+  border-radius: 20px;
+  padding: 0 20px;
+  
+}
+.search input{
+  width: 500px;
+  height: 36px;
+  font-size: 15px;
+  border-radius: 20px ;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  background: transparent;
+  font-size: 15px;
+  color: rgb(37, 36, 36);
+}
+
+.search button{
+  background: none;
+  border: none;
+  height: 36px;
+  font-size: 15px;
+  margin-left: 5px;
+  border-radius: 20px;  
+  outline: none;
+  cursor: pointer;
+  &:hover{
+    font-size: 16px;
+  }
+}
+input[type="search"]::-webkit-search-cancel-button{ 
+  display: none; 
+}
+.main-container{
+ display: flex;
+ flex-direction: column;
+}
+
+.footer{
+  background-color: white;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  justify-content: space-between;
+  min-width: 100vw;
+  max-height: 100px;
+  border-top: 1px solid rgba(151, 140, 140,0.2);
+  padding: 20px 50px;
+  margin-top: 50px;
+}
+.logo-footer{
+  font-family: 'MuseoModerno', sans-serif !important;
+  font-size: 20px !important;
+  color: rgb(103, 102, 102);
+  font-weight: 900;
+}
+.footer p{
+  font-size: 15px;
+  color: rgb(150, 150, 150);
+}
+.social-media{
+  display: flex;
+  align-items: center;
+
+}
+.social-media i{
+  color: rgb(122, 122, 122);
+  font-size: 18px;
+  padding: 10px 10px;
+  cursor: pointer;
+}
+.social-media i:hover{
+  position: relative;
+}
+.social-media i:hover::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(139, 139, 139, 0.2);
+  border-radius: 50%;
+}
+.f-text{
+  margin-right: 530px;
+  font-size: 13px !important;
+}
+.cards{
+  width: 100%;
+  height: 100%;
+  padding: 100px 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 30px;
+}
+.card{
+  width: 350px;
+  height: 270px;
+  border: 2px solid #1bb200;
+  border-radius: 15px;
+  &:hover{
+    background-color: #f9f9f9;
+  }
+}
+.profile{
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  border-bottom: 1px solid #c2c2c2; 
+}
+.profile img{
+  width: 50px;
+  height: 50px;
+}
+.profile .name{
+  display: flex;
+  flex-direction: column;
+}
+.name span{
+  font-size: 20px;
+  font-weight: 350px;
+}
+.name p{
+  font-size: 13px;
+  color: #383838c1;
+}
+.card-details{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 25px;
+}
+.card-details span{
+  font-size: 25px;
+  font-weight: 400;
+}
+.card-details p{
+  margin-top: 8px;
+  word-spacing: 1.2px;
+  font-size: 14px;
+}
+.btn{
+  height: 100px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.btn button{
+  width: 150px;
+  height: 40px;
+  background-color: #00a600;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 450;
+  transition: transform 0.1s ease;
+
+  &:hover{
+    background-color: #00b200;
+    transform: scale(1.01);
+  }
+}
+.btn p{
+  font-size: 18px;
+  color: #4a4a4a;
+}
+.profile_icon{
+  width: 40px;
+  height: 40px;
+}
+.logout{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;  
+}
+.logout_btn{
+  height: 36px;
+  width: 100px;
+  border-radius: 20px;
+  border: none;
+  background-color: #d20000;
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  outline: none;
+  transition: .4s ease;
+  font-weight: 450;
+}
+.logout_btn:hover{
+  position: relative;
+}
+.logout_btn:hover::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #ffffff33;
+  border-radius: 20px;
+}
+.gig-btn{
+  width: 120px;
+  height: 36px;
+  border-radius: 25px;
+  border: none;
+  background-color: #108a00;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+}
+.gig-btn:hover{
+  position: relative;
+}
+.gig-btn:hover::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+}
+.error-alert{
+  display: flex;
+  margin-top: 70px;
+  justify-content: center;
+  margin-bottom: -70px;
+  align-items: center;
+  background-color: #f31111;
+  color: white;
+  height: 40px;
+  width: 100vw;
+  transition: opacity 1s ease-in-out;
+}
+.success-alert{
+  display: flex;
+  margin-top: 70px;
+  justify-content: center;
+  margin-bottom: -70px;
+  align-items: center;
+  background-color: #186ADE;
+  color: white;
+  height: 40px;
+  width: 100vw;
+  transition: opacity 1s ease-in-out;
+}

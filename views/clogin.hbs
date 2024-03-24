@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="/image/icon.png" type="image/png">
+  <title>WorkWave</title>
+</head>
+
+<body>
+  <div class="nav">
+    <a href="/" class="logo">WorkWave</a>
+    <p><a href="/flogin">Login</a> to your Freelancer account </p>
+  </div>
+
+  <div class="container">
+    <div class="wrapper">
+      {{#if name}}
+        <h2>Welcome {{name}}! <br> login to continue</h2>
+      {{else}}
+        <h2>Log in to your Client account</h2>
+      {{/if}}
+      <form action="/auth/clogin" method="POST">
+        <div class="input-box">
+          <input type="email" placeholder="Enter your email" name="lemail" required>
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="Enter your password" name="lpassword" required>
+        </div>
+        <div class="input-box button">
+          <input type="Submit" value="Login">
+        </div>
+      </form>
+      {{#if message}}
+        <p class="alert"><i class="fa-solid fa-circle-exclamation"></i>{{message}}</p>
+       {{/if}}
+      <div class="text">
+        <h3><span>Don't have an account?</span></h3>
+        <a href="/client"><button>Signup</button></a>
+      </div>
+    </div>
+  </div>
+  <script src="/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/image/icon.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/gig.css">
+  <link rel="stylesheet" href="/freelancers.css">
+
+  <title>WorkWave</title>
+</head>
+
+<body>
+<header>
+    <nav class="nav-bar ">
+      <a href="/home" class="logo">WorkWave</a>
+      <div class="find">
+        <a href="/home">Home</a>
+        <a href="/">Admin Panel</a>
+        <a href="/auth/Talents">Find Talents</a>
+      </div>
+      <div class="search">
+        <button type="submit"><i class="fas fa-search"></i></button>
+        <input type="search" placeholder="Search for any service">
+      </div>
+      
+      <div class="logout">
+          <a href="/"><button onclick="javacript:alert('logout successfull!')" type="submit" class="logout_btn">Logout</button></a>
+          <a><img class="profile_icon" src="/image/profile.png" alt="profile icon"></a>
+        </div>
+    </nav>
+  </header>
+
+  <div class="g-container">
+    <div class="g-wrapper">
+      <h2>Enter following details</h2>
+      <form id="g-signup-form" action="/auth/gig" method="POST">
+        <div class="g-input-box">
+          <input type="text" placeholder="Title" name="title" required>
+        </div>
+        <div class="g-input-box">
+          <input type="text" placeholder="Description" name="description" required>
+        </div>
+        <select  name="catogery" id="catogery"  required>
+          <option>Select Catogery</option>
+          {{#each category}}
+          <option value="{{cid}}" >{{type}}</option>
+          {{/each}}
+        </select>
+        
+        <div class="g-input-box">
+          <input type="number" name="price" placeholder="Price" id="price" required>
+        </div>
+        <div class="g-input-box g-button">
+          <input type="Submit" value="Upload" id="submit">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>

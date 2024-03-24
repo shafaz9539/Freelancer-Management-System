@@ -1,0 +1,32 @@
+const express = require('express');
+const router = express.Router();
+const loginController = require('../controllers/login');
+const signupController = require('../controllers/signup');
+const freelancersController = require('../controllers/freelancers');
+const gigController = require('../controllers/gig');
+const feedbackController = require('../controllers/feedback');
+const adminController = require('../controllers/admin');
+
+router.post('/csignup', signupController.csignup);
+router.post('/fsignup', signupController.fsignup);
+router.post('/flogin', loginController.flogin);
+router.post('/clogin', loginController.clogin);
+router.get('/logout', loginController.logout);
+router.post('/Talents', freelancersController.find);
+router.get('/Talents', freelancersController.freelancers);
+router.post('/gig' ,gigController.createGig);
+router.get('/gig/:id' ,gigController.deleteGig);
+router.post('/feedback', feedbackController.feedback);
+router.post('/admin', adminController.login);
+router.get('/admin/logout', adminController.logout);
+router.get('/admin/freelancers/:id',adminController.deleteFreelancer);
+router.get('/admin/clients/:id',adminController.deleteClients);
+router.get('/admin/admins/:id',adminController.deleteAdmin);
+router.get('/admin/category/:id',adminController.deleteCategory);
+router.get('/admin/feedback/:id',adminController.deleteFeedback);
+router.post('/admin/category/insert',adminController.insertCategory);
+router.post('/admin/admins/insert',adminController.insertAdmin);
+router.post('/admin/category/update/:id',adminController.updateCategory);
+router.post('/admin/admins/update/:id',adminController.updateAdmin);
+module.exports = router;
+

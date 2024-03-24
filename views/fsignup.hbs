@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/fsignup.css">
+  <link rel="icon" href="/image/icon.png" type="image/png">
+  <title>WorkWave</title>
+</head>
+
+<body>
+  <div class="nav">
+    <a href="/" class="logo">WorkWave</a>
+    <p>Here to hire talent? <a href="/client/csignup">Join as client</a></p>
+  </div>
+
+  <div class="container">
+    <div class="wrapper">
+      <h2>Sign up to find work</h2>
+      <form id="signup-form" action="/auth/fsignup" method="POST">
+        <div class="input-box">
+          <input type="text" placeholder="Enter your name" name="fname" required>
+        </div>
+        <div class="input-box">
+          <input type="email" placeholder="Enter your email" name="femail" required>
+        </div>
+        <div class="dflex">
+          <div class="input-box">
+            <input type="password" placeholder="Create password" id="password" name="fpassword" required>
+          </div>
+          <div class="input-box">
+            <input type="password" placeholder="Confirm password" id="confirm_password" name="fconfirm_password" required>
+          </div>
+        </div>
+
+        <div class="policy">
+          <input type="checkbox" id="terms_checkbox" required>
+          <h3>I accept all terms & condition</h3>
+        </div>
+        <div class="input-box button">
+          <input type="Submit" value="Register Now" id="submit">
+        </div>
+        <div class="text">
+          <h3>Already have an account? <a href="/login">Login now</a></h3>
+        </div>
+      </form>
+       {{#if message}}
+        <p class="alert"><i class="fa-solid fa-circle-exclamation"></i>{{message}}</p>
+       {{/if}}
+    </div>
+  </div>
+  <script src="/validation.js"></script>
+</body>
+</html>
