@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2024 at 08:16 PM
+-- Generation Time: Feb 10, 2025 at 09:37 AM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- PHP Version: 8.1.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `freelancer management system`
+-- Database: `freelancer_management_system`
 --
 
 -- --------------------------------------------------------
@@ -39,9 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`aid`, `name`, `email`, `password`) VALUES
-(1, 'Abdulla shafaz', 'shafaz@gmail.com', '$2a$08$chotM6vgy9HdSVLNUXkTqud5ZWTq57ZLkJjFNHr3Oykh89X2HTtZO'),
-(5, 'Anargh E', 'anargh@gmail.com', '$2a$08$UJpXDzqCdP3lXzKnC.vgHeHUrLVCXxGLagPnB/AvzSvaUSD10EVMm'),
-(6, 'Fahiz', 'fahiz@gmail.com', '$2a$08$7CH0yZJQM92x3mO2uXtvqusjWaQa/035EQA7Npno13cfW6vCrbyvm');
+(1, 'Admin', 'admin@gmail.com', '$2a$08$w43TDyRwHGcMKIuvC69wmOlswaKHjNuU8Y7J6giFnu73TwJYbK/8G');
 
 -- --------------------------------------------------------
 
@@ -100,8 +98,8 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`cid`, `name`, `email`, `company_name`, `password`) VALUES
-(1, 'fahiz', 'fahiz@gmail.com', 'abcd', '$2a$08$SozpgYu8Ec.g56/JxZkN9OnebaLIumgE/PtBmV5tCeylxgZbB80x6'),
-(5, 'Abhin M', 'abhin@gmail.com', 'xyz', '$2a$08$HPMREff8Ms2DfXCJ7cMfJ.hK8dAXBb6Ns8fehF0RgVhysZNhMMId2');
+(7, 'joe', 'joe@gmail', 'ABC', '$2a$08$P1G5bNd.zW6v/MxEsZ.KRuRuqPKnTyJ3QVaGlMjdfAtmgPCTG6VVO'),
+(8, 'demo', 'demo@gmail.com', 'ABC', '$2a$08$UoEZNM1/dh.MfBcBc2X1YuYBCcy571tPvQkTduwl55ZQ389h/7jPi');
 
 -- --------------------------------------------------------
 
@@ -115,13 +113,6 @@ CREATE TABLE `feedback` (
   `email` varchar(100) NOT NULL,
   `content` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `feedback`
---
-
-INSERT INTO `feedback` (`feid`, `name`, `email`, `content`) VALUES
-(2, 'sabith', 'sabith@gmail.com', 'its very nice');
 
 -- --------------------------------------------------------
 
@@ -141,8 +132,6 @@ CREATE TABLE `freelancers` (
 --
 
 INSERT INTO `freelancers` (`fid`, `name`, `email`, `password`) VALUES
-(1, 'shafaz', 'shafaz@gmail.com', '$2a$08$CMFFuaR4mTnuMJg7wipjMe6VoG70.yfwaiQKyreMNjea9EMhfCqxS'),
-(2, 'Muhammed Sabith', 'sabith@gmail.com', '$2a$08$5ijFjBpUpUoEYU.aUCd4U.iOIEnCNt7QYZmFgVvVN6EUekprADoBK'),
 (3, 'John', 'john@example.com', '$2a$08$CMFFuaR4mTnuMJg7wipjMe6VoG70.yfwaiQKyreMNjea9EMhfCqxS'),
 (4, 'Emma', 'emma@example.com', '$2a$08$CMFFuaR4mTnuMJg7wipjMe6VoG70.yfwaiQKyreMNjea9EMhfCqxS'),
 (5, 'Michael', 'michael@example.com', '$2a$08$CMFFuaR4mTnuMJg7wipjMe6VoG70.yfwaiQKyreMNjea9EMhfCqxS'),
@@ -159,7 +148,8 @@ INSERT INTO `freelancers` (`fid`, `name`, `email`, `password`) VALUES
 (17, 'Charlotte', 'charlotte@example.com', '$2a$08$CMFFuaR4mTnuMJg7wipjMe6VoG70.yfwaiQKyreMNjea9EMhfCqxS'),
 (18, 'Ethan', 'ethan@example.com', '$2a$08$CMFFuaR4mTnuMJg7wipjMe6VoG70.yfwaiQKyreMNjea9EMhfCqxS'),
 (20, 'Benjamin', 'benjamin@example.com', '$2a$08$CMFFuaR4mTnuMJg7wipjMe6VoG70.yfwaiQKyreMNjea9EMhfCqxS'),
-(21, 'Ella', 'ella@example.com', '$2a$08$CMFFuaR4mTnuMJg7wipjMe6VoG70.yfwaiQKyreMNjea9EMhfCqxS');
+(21, 'Ella', 'ella@example.com', '$2a$08$CMFFuaR4mTnuMJg7wipjMe6VoG70.yfwaiQKyreMNjea9EMhfCqxS'),
+(26, 'demo', 'demo@gmail.com', '$2a$08$Eel.DRWI0rqLvdE/oygR3.OBcKjJMwspOU89oNMFqpJqDus0hBqWK');
 
 -- --------------------------------------------------------
 
@@ -182,10 +172,6 @@ CREATE TABLE `gigs` (
 
 INSERT INTO `gigs` (`gid`, `fid`, `title`, `cid`, `price`, `description`) VALUES
 (4, 4, 'Mobile App Development for iOS', 4, 800, 'Develop a custom mobile app for iOS platform'),
-(13, 2, 'Mobile App Development for Android', 4, 700, 'Develop a custom mobile app for Android platform'),
-(17, 1, 'Logo Design for Company A', 2, 150, 'Design a professional logo for Company A'),
-(31, 1, 'Content Writing for Blog Posts', 6, 150, 'Write engaging blog posts for various topics'),
-(32, 2, 'Social Media Marketing for Small Businesses', 20, 250, 'Create and manage social media campaigns for small businesses'),
 (33, 3, 'Graphic Design for Logo', 3, 200, 'Design a professional logo for a company or brand'),
 (34, 4, 'Mobile App Development for Android', 4, 1000, 'Develop a custom mobile app for the Android platform'),
 (35, 5, 'Photography Services for Events', 22, 300, 'Capture high-quality photographs for events and occasions'),
@@ -203,8 +189,7 @@ INSERT INTO `gigs` (`gid`, `fid`, `title`, `cid`, `price`, `description`) VALUES
 (50, 12, 'Voice Over for Podcast', 16, 80, 'Record professional voice-overs for podcast episodes'),
 (51, 14, 'Copywriting for Product Descriptions', 13, 100, 'Write compelling and informative product descriptions to boost sales'),
 (52, 18, 'Data Entry for Spreadsheet Management', 8, 50, 'Perform accurate data entry tasks for managing spreadsheets and databases'),
-(53, 21, 'Logo Animation for Brand Intro', 17, 200, 'Create dynamic logo animations for brand introductions in videos or presentations'),
-(55, 1, 'Full Stack Web Development', 25, 1000, 'I can create a website in a matter of time');
+(53, 21, 'Logo Animation for Brand Intro', 17, 200, 'Create dynamic logo animations for brand introductions in videos or presentations');
 
 --
 -- Indexes for dumped tables
@@ -272,7 +257,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `feedback`
@@ -284,13 +269,13 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `freelancers`
 --
 ALTER TABLE `freelancers`
-  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `gigs`
 --
 ALTER TABLE `gigs`
-  MODIFY `gid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `gid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- Constraints for dumped tables

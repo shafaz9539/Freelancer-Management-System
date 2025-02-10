@@ -9,7 +9,7 @@ dotenv.config();
 const connection = mysql.createConnection({
   host: process.env.HOST, // MySQL host
   user: process.env.USER, // MySQL user
-  password: "", // MySQL password (empty for now, will be replaced with actual password)
+  password: process.env.PASSWORD, // MySQL password (empty for now, will be replaced with actual password)
   database: process.env.DATABASE, // MySQL database name
   port: process.env.DB_PORT // MySQL port
 });
